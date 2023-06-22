@@ -1,0 +1,35 @@
+<html>
+  <!-- simple website that displays a centered photo and a centered title -->
+  <!-- https://webdesign.tutsplus.com/tutorials/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734 -->
+  <head>
+    <title>…</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <span lang="en">{{ general.title }}</span>
+          <span lang="de">{{ general.de.title }}</span>
+        </h1>
+      </header>
+      <main class="slider-wrapper">
+          <button class="slide-arrow" id="slide-arrow-prev"> &#8249; </button>
+          <button class="slide-arrow" id="slide-arrow-next"> &#8250; </button>
+          <ul class="slides-container" id="slides-container">
+            {% for photo in photos %}
+            <li class="slide">
+              <img src="{{ photo.path}}" alt="{{photo.title}}" title="{{photo.title}}"/>
+              <p>{{ photo.description }}</p>
+              <p>{{ photo.exif.make }}</p>
+            </li>
+            {% endfor %}
+          </ul>
+      </main>
+      <footer>
+        <a href="#about">&copy; {{ general.copyright }}</a>
+      </footer>
+    </div>
+  </body>
+</html>

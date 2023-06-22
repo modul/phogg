@@ -1,0 +1,6 @@
+[general]
+title = "My photo gallery"
+copyright = "Your Name 2020-2023"
+
+[general.de]
+title = "Meine Fotogallerie"
